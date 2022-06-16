@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { history } from './helpers';
+//import { userService } from './features/users/user.service';
+
 import { App } from './App';
 
 // attempt silent token refresh before startup
