@@ -1,14 +1,45 @@
 import React from 'react';
-import Container from '@mui/material/Container';
+import { Container, Grid, Paper, Skeleton } from '@mui/material';
 
-import Copyright from './Copyright';
+import NavBar from './NavBar';
 
 function Home() {
   return (
-    <Container>
+    <>
+      <NavBar />
       Redeemt
-      <Copyright sx={{ pt: 4 }} />
-    </Container>
+      <Grid container item xs={12} md={4} lg={3} spacing={3}>
+        <Paper
+          sx={{
+            p: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            height: 240,
+          }}
+        >
+          <Skeleton variant="rectangular" width={210} height={118} />
+        </Paper>
+      </Grid>
+      <Grid item xs={12} md={4} lg={3}>
+        <Paper
+          sx={{
+            p: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            height: 240,
+          }}
+        >
+          <Skeleton variant="circular" width={310} height={118} />
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper
+          sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 240 }}
+        >
+          <Skeleton variant="rectangular" width={290} height={118} />
+        </Paper>
+      </Grid>
+    </>
   );
 }
 
