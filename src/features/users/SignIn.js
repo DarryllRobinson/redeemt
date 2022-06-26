@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Alert,
   Avatar,
   Box,
   Button,
@@ -8,19 +9,25 @@ import {
   FormControlLabel,
   Grid,
   Link,
+  Snackbar,
   TextField,
   Typography,
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
-export default function SignIn() {
+import { userService } from './user.service';
+import { withSnackbar } from '../../components/SnackbarHOC';
+
+export default withSnackbar(SignIn);
+
+function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    //console.log({ email: data.get('email'), password: data.get('password'), });
+    userService.login(data.get('email'), data.get('password'));
+    console.log('Alerting: ', withSnackbar(SignIn));
+    //snackbarShowMessage(`OTP has been sent to `);
   };
 
   return (

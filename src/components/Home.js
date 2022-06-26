@@ -1,9 +1,12 @@
 import React from 'react';
 import { Container, Grid, Paper, Skeleton } from '@mui/material';
 
+import NavBar from './NavBar';
+
 function Home() {
   return (
     <>
+      <NavBar />
       Redeemt
       <Grid container item xs={12} md={4} lg={3} spacing={3}>
         <Paper
