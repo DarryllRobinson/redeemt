@@ -27,7 +27,7 @@ function App() {
           border: '1px solid black',
           display: 'flex',
           flexDirection: 'column',
-          mt: '-8px',
+          m: '-8px',
           minHeight: '100vh',
           backgroundColor: (theme) =>
             theme.palette.mode === 'light'
